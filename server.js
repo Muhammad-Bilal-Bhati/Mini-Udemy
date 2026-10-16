@@ -6,6 +6,7 @@ const cors = require("cors");
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
+
 app.use(cors({
     origin: process.env.FRONTEND_URL || "https://mini-udemy-ten.vercel.app",
     credentials: true
