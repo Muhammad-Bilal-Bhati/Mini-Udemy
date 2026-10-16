@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
+  baseURL: import.meta.env.VITE_API_URL || 'https://mini-udemy-nxp3.onrender.com',
   withCredentials: true,
-  timeout: 8000,
+  timeout: 60000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -18,7 +18,7 @@ async function request(method, path, data) {
       throw new Error('Backend response timed out. Make sure the server and MongoDB are running.')
     }
     if (!error.response) {
-      throw new Error('Cannot connect to the backend at http://localhost:5000.')
+      throw new Error('Cannot connect to the backend at https://mini-udemy-nxp3.onrender.com.')
     }
     throw new Error(error.response.data?.message || 'Something went wrong')
   }
